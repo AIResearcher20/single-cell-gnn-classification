@@ -232,3 +232,15 @@ Transformer-based graph architectures
 ✔ Suitable for academic submission
 ✔ Publication-style structure
 
+
+## 📎 Citation
+
+If you use this work in your research, please cite:
+
+```bibtex
+@software{Moafi2026scgnn,
+  title={Single-Cell RNA-seq Classification using Graph Neural Networks},
+  author={Moafi, Sepideh},
+  year={2025},
+  url={https://github.com/AIReasercher0/sc-gnn-classification}
+}
