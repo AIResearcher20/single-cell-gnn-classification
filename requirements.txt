@@ -1,0 +1,7 @@
+scanpy
+numpy
+scikit-learn
+torch
+torch-geometric
+matplotlib
+seaborn
