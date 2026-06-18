@@ -6,99 +6,229 @@
 ![Status](https://img.shields.io/badge/Research-Completed-brightgreen)
 ![Domain](https://img.shields.io/badge/Bioinformatics-AI%20for%20Genomics-purple)
 
----
 
-## 🧠 Abstract
 
-This project investigates the application of **Graph Neural Networks (GNNs)** for cell-type classification in single-cell RNA sequencing (scRNA-seq) data.
+🧠 Abstract
 
-We construct a **k-nearest neighbor graph in PCA-reduced latent space**, enabling the modeling of **cell–cell interactions as a non-Euclidean structure**.
+This project investigates the application of Graph Neural Networks (GCN & GAT) for cell-type classification in single-cell RNA sequencing (scRNA-seq) data.
 
-Two state-of-the-art architectures are evaluated:
+Unlike traditional machine learning methods that assume independence between samples, this work models cells as nodes in a graph-based representation of transcriptional similarity, enabling the capture of biological structure and cellular heterogeneity.
 
-- Graph Convolutional Networks (GCN)
-- Graph Attention Networks (GAT)
 
 ---
 
-## 🔬 Scientific Motivation
+🔬 Scientific Motivation
 
-Traditional machine learning methods assume **independent and identically distributed (i.i.d.) samples**, which is invalid in biological systems.
+Single-cell RNA-seq data lies on a non-Euclidean manifold, where:
 
-Instead, cells exist in a **continuous transcriptional manifold**, where:
+Cells exhibit continuous transcriptional states
 
-- Neighboring cells share functional similarity  
-- Gene expression exhibits nonlinear structure  
-- Local topology is biologically meaningful  
+Local neighborhoods reflect biological function
 
-Graph-based learning directly addresses this limitation.
+Gene expression is highly nonlinear and sparse
+
+
+Graph Neural Networks naturally align with this structure by modeling cell–cell relationships explicitly.
+
 
 ---
 
-## 🧪 Methodology
+🧪 Dataset
 
-### 🔷 Data Processing Pipeline
+Dataset: PBMC3k Single-cell RNA-seq
 
-```text
-Raw Counts → Normalization → Log Transform → HVG Selection → PCA → kNN Graph → GNN
-🔷 Graph Construction
-A k-nearest neighbor graph is constructed:
-Nodes = cells
-Edges = transcriptional similarity
-Distance metric = Euclidean in PCA space
-🔷 Models
-🟦 GCN (Graph Convolutional Network)
-Learns uniform neighborhood aggregation:
-🟥 GAT (Graph Attention Network)
-Introduces learnable attention weights:
-👉 Enables adaptive importance weighting of neighboring cells.
+Source: Scanpy built-in dataset
+
+
+import scanpy as sc
+adata = sc.datasets.pbmc3k()
+
+📎 Official reference:
+https://scanpy.readthedocs.io/en/stable/api/scanpy.datasets.pbmc3k.html
+
+
+---
+
+⚙️ Pipeline Overview
+
+Raw Counts → Quality Control → Normalization → Log Transform
+→ Highly Variable Genes → PCA → kNN Graph → GNN (GCN / GAT)
+→ Cell Type Prediction
+
+
+---
+
+🧬 Graph Construction
+
+Cells are represented as nodes in a graph:
+
+Nodes: individual cells
+
+Edges: k-nearest neighbors in PCA space
+
+Feature space: 50-dimensional PCA embedding
+
+
+
+---
+
+🤖 Models
+
+🔵 Graph Convolutional Network (GCN)
+
+Applies spectral-based neighborhood aggregation:
+
+H^{(l+1)} = \sigma(D^{-1/2} A D^{-1/2} H^{(l)} W^{(l)})
+
+
+---
+
+🔴 Graph Attention Network (GAT)
+
+Learns adaptive importance weights:
+
+\alpha_{ij} = \text{softmax}(a(W h_i, W h_j))
+
+✔ Allows dynamic weighting of neighboring cells
+✔ Improves representation of heterogeneous cell populations
+
+
+---
+
 📊 Experimental Setup
-Dataset: PBMC single-cell RNA-seq
-Dimensionality reduction: PCA (50 components)
+
+PCA dimensions: 50
+
 Graph: kNN (k = 20)
-Evaluation metrics:
+
+Train/Test split: 80/20
+
+Metrics:
+
 Accuracy
+
 Macro F1-score
+
 Confusion Matrix
+
+
+
+
+---
+
 📈 Results
-Model
-Accuracy
-Macro F1
-Logistic Regression
-~0.47
-~0.34
-GCN
-~0.78
-~0.66
-GAT
-~0.81
-~0.67
-🧬 Key Findings
-GNNs significantly outperform classical ML methods
+
+Model	Accuracy	Macro F1
+
+Logistic Regression	~0.47	~0.34
+GCN	~0.78	~0.66
+GAT	~0.81	~0.67
+
+
+
+---
+
+📊 Visualizations
+
+🔷 Effect of k on GCN
+
+
+
+🔶 Accuracy Comparison
+
+
+
+🔴 Macro F1 Score
+
+
+
+🟣 F1 Score Comparison
+
+
+
+🟢 t-SNE Visualization
+
+
+
+🧠 Model Comparison
+
+
+
+
+---
+
+🧩 Key Findings
+
+Graph-based models significantly outperform classical ML approaches
+
 GAT consistently improves over GCN due to attention mechanism
-Graph structure captures biologically meaningful relationships
-📌 Conclusion
-Graph-based deep learning provides a powerful framework for modeling:
-Cellular heterogeneity
-Transcriptional similarity
-Non-Euclidean biological manifolds
-GAT demonstrates superior performance by learning adaptive inter-cell dependencies.
-🚀 Future Work
-Integration with multi-omics data
-Transformer-based graph models
-Self-supervised pretraining on scRNA-seq
-Spatial transcriptomics extension
-📁 Repository Structure
-Copy code
-Text
-src/        → core implementation  
-models/     → trained models  
-results/    → figures & plots  
+
+kNN graph construction is crucial for capturing biological structure
+
+Latent PCA space preserves meaningful cellular similarity
+
+
+
+---
+
+🧬 Biological Insight
+
+The learned graph structure reflects:
+
+Cellular differentiation pathways
+
+Immune cell subtype separation
+
+Continuous transcriptional landscapes
+
+
+
+---
+
+🚀 How to Run
+
+pip install -r requirements.txt
+
+python src/main.py
+
+
+---
+
+📁 Project Structure
+
+src/        → source code (GCN, GAT, pipeline)
+results/    → plots and visualizations
+models/     → trained models
 docs/       → report & presentation
-🧠 Keywords
-Graph Neural Networks, scRNA-seq, Bioinformatics, Single-cell Analysis, GAT, GCN, PCA, kNN Graph
-🏆 Project Status
-✔ Completed
+
+
+---
+
+📌 Conclusion
+
+Graph Neural Networks provide a powerful framework for modeling biological systems as structured data, enabling improved classification performance and better interpretability of single-cell RNA-seq data.
+
+
+---
+
+🔮 Future Work
+
+Integration with multi-omics datasets
+
+Self-supervised graph pretraining
+
+Spatial transcriptomics extension
+
+Transformer-based graph architectures
+
+
+
+---
+
+🏆 Final Status
+
 ✔ Reproducible
 ✔ Research-grade implementation
 ✔ Suitable for academic submission
+✔ Publication-style structure
+
