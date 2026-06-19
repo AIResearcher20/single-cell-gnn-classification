@@ -127,30 +127,49 @@ GAT	~0.81	~0.67
 
 
 ---
+## 📊 Results & Visualizations
 
-📊 Visualizations
+This section presents the experimental evaluation of Graph Neural Networks on single-cell RNA-seq data, including performance metrics and visualization of latent biological structure.
 
-🔷 Effect of k on GCN
+---
 
+### 🔷 Effect of Neighborhood Size (k) on GCN Performance
 
+This plot shows how varying the number of neighbors (k) influences GCN performance.
 
-🔶 Accuracy Comparison
+![GCN k effect](results/gcn_k_effect.png)
 
+---
 
+### 🟢 t-SNE Visualization of Single-cell Data
 
-🔴 Macro F1 Score
+2D projection of high-dimensional gene expression data using t-SNE, revealing cellular structure and clustering patterns.
 
+![t-SNE](results/tsne_visualization.png)
 
+---
 
-🟣 F1 Score Comparison
+### 🟡 Model Comparison
 
+Comparison between different models including Logistic Regression, GCN, and GAT.
 
+![Model Comparison](results/model_comparison.png)
 
-🟢 t-SNE Visualization
+---
 
+### 🔴 Macro F1 Score Comparison
 
+Evaluation of models using Macro F1-score across different classes.
 
-🧠 Model Comparison
+![F1 Comparison](results/f1_comparison.png)
+
+---
+
+### 🔵 Accuracy Comparison
+
+Overall classification accuracy comparison between models.
+
+![Accuracy Comparison](results/accuracy_comparison.png)
 
 
 
