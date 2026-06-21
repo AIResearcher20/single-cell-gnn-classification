@@ -1,11 +1,27 @@
-# 🧬 Single-Cell RNA-seq Analysis using Graph Neural Networks (GCN & GAT)
+<div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.10-blue)
-![PyTorch](https://img.shields.io/badge/Deep%20Learning-Graph%20Neural%20Networks-orange)
-![Scanpy](https://img.shields.io/badge/Single--Cell-Transcriptomics-green)
-![Status](https://img.shields.io/badge/Research-Completed-brightgreen)
-![Domain](https://img.shields.io/badge/Bioinformatics-AI%20for%20Genomics-purple)
+# 🧬 Single-Cell RNA-seq Analysis using Graph Neural Networks
+---
+### Graph Representation Learning for Cell-Type Classification (GCN & GAT)
 
+---
+
+![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat-square&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-GNN-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![Scanpy](https://img.shields.io/badge/Scanpy-ScRNA--seq-3CB371?style=flat-square)
+![Task](https://img.shields.io/badge/Task-Cell_Classification-blueviolet?style=flat-square)
+![Model](https://img.shields.io/badge/Model-GCN_+_GAT-red?style=flat-square)
+![Data](https://img.shields.io/badge/Data-Single--Cell_RNA--seq-2ea44f?style=flat-square)
+![Domain](https://img.shields.io/badge/Domain-Computational_Biology-8A2BE2?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Research--Grade-blue?style=flat-square)
+
+---
+
+### 🔬 Cell Atlas Construction • Graph Learning • Biological Signal Modeling  
+### 🧠 GCN / GAT for High-Dimensional Transcriptomic Data
+
+---
+</div>
 
 
 🧠 Abstract
