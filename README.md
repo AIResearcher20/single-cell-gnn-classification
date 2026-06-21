@@ -2,8 +2,6 @@
 
 # 🧬 Single-Cell RNA-seq Analysis using Graph Neural Networks
 ---
-### Graph Representation Learning for Cell-Type Classification (GCN & GAT)
-
 ---
 
 ![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat-square&logo=python&logoColor=white)
@@ -18,7 +16,6 @@
 ---
 
 ### 🔬 Cell Atlas Construction • Graph Learning • Biological Signal Modeling  
-### 🧠 GCN / GAT for High-Dimensional Transcriptomic Data
 
 ---
 </div>
