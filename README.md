@@ -146,23 +146,30 @@ This section presents the experimental evaluation of Graph Neural Networks on si
 
 ---
 
-## 🔷 GCN k Effect (Effect of Neighborhood Size k)
-![GCN k effect](Feature/gcnkeffect.png)
+## 🔷 ## Figures
+
+### GCN K Effect
+![GCN K Effect](Feature/gcnkeffect.png)
 
 ---
 
-### t-SNE Visualization of Single-cell Data
+### t-SNE Visualization
 ![t-SNE](Feature/tsne_visualization.png)
 
 ---
 
-### Model Comparison (GCN vs GAT vs Logistic Regression)
+### Model Comparison
 ![Model Comparison](Feature/model_comparison.png)
 
 ---
 
-### Macro F1 Score Comparison
-![F1 Comparison](Feature/f1_comparison.png)
+### F1 Score Comparison
+![F1 Score](Feature/f1_comparison.png)
+
+---
+
+### Accuracy Comparison
+![Accuracy](Feature/accuracy_comparison.png)
 
 ---
 
