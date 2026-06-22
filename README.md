@@ -146,44 +146,38 @@ This section presents the experimental evaluation of Graph Neural Networks on si
 
 ---
 
-### 🔷 Effect of Neighborhood Size (k) on GCN Performance
-
+## 🔷 Effect of Neighborhood Size (k) on GCN Performance
 This plot shows how varying the number of neighbors (k) influences GCN performance.
 
-![GCN k effect](results/gcn_k_effect.png)
+![GCN k effect](features/gcn_k_effect.png)
 
 ---
 
-### 🟢 t-SNE Visualization of Single-cell Data
-
+## 🟢 t-SNE Visualization of Single-cell Data
 2D projection of high-dimensional gene expression data using t-SNE, revealing cellular structure and clustering patterns.
 
-![t-SNE](results/tsne_visualization.png)
+![t-SNE](features/tsne.png)
 
 ---
 
-### 🟡 Model Comparison
+## 🟡 Model Comparison
+Comparison between Logistic Regression, GCN, and GAT.
 
-Comparison between different models including Logistic Regression, GCN, and GAT.
-
-![Model Comparison](results/model_comparison.png)
+![Model Comparison](features/model_comparison.png)
 
 ---
 
-### 🔴 Macro F1 Score Comparison
-
+## 🔴 Macro F1 Score Comparison
 Evaluation of models using Macro F1-score across different classes.
 
-![F1 Comparison](results/f1_comparison.png)
+![F1 Comparison](features/macro_f1.png)
 
 ---
 
-### 🔵 Accuracy Comparison
-
+## 🔵 Accuracy Comparison
 Overall classification accuracy comparison between models.
 
-![Accuracy Comparison](results/accuracy_comparison.png)
-
+![Accuracy Comparison](features/accuracy.png)
 
 
 
